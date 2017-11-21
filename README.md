@@ -1,2 +1,2 @@
-# GitHubPagesSample
+# GitHubPages
 
