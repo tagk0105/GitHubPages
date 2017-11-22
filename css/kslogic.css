@@ -12,18 +12,18 @@ div#header-fixed {
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: 140px;
+	height: 60px;
 }
 
 div#header-bk {
 	background-color: #f0f0f0;
-	padding: 10px 0 20px; 	/* 上10px、下20px あける */
-	height: 110px;
+	padding: 5px 0 10px; 	/* 上10px、下10px あける */
+	height: 50px;
 	width: 100%;
 }
 
 div#header {
-	border: 5px solid #fff;
+#	border: 5px solid #fff;
 	height: 100%;
 	width: 960px;
 	margin: auto;
@@ -31,7 +31,7 @@ div#header {
 
 /* ボディ定義 */
 div#body-bk {
-	padding: 160px 0 160px 0; 	/* 上下160px余白を取る */
+	padding: 80px 0 50px 0; 	/* 上下160px余白を取る */
 }
 
 div#body {
