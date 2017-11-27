@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo : mapTest02</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var seiko = {lat: 33.5939, lng: 130.4257};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: seiko
+        });
+        var marker = new google.maps.Marker({
+          position: seiko,
+          map: map
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5wLMSZ2YQqMcWkWTlaA6eSifxBAnNUa4&callback=initMap"
+            async defer></script>
+  </body>
+</html>

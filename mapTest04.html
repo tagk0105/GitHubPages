@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pickup map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      #map {
+        width: 80%;
+        height: 80%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <ul>
+      <li>lat: <span id="lat"></span></li>
+      <li>lon: <span id="lng"></span></li>
+      <li>Address: <span id="address"></span></li>
+    </ul>
+    <script>
+      function initMap() {
+        // マップ初期化
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: {lat: 33.59387, lng: 130.42563}
+        });
+
+        // クリックイベント追加
+        map.addListener('click', function(e) {
+          getClickLatLng(e.latLng, map);
+          getAddress(e.latLng);
+        });
+      }
+
+      function getClickLatLng(lat_lng, map) {
+
+        // 座標表示
+        document.getElementById('lat').textContent = lat_lng.lat();
+        document.getElementById('lng').textContent = lat_lng.lng();
+
+        // マーカー設置
+        var marker = new google.maps.Marker({
+          position: lat_lng,
+          map: map
+        });
+
+        // 座標の中心をずらす
+        map.panTo(lat_lng);
+      }
+
+      function getAddress(lat_lng) {
+        // Geocoderのコンストラクタ
+        var geocoder = new google.maps.Geocoder();
+
+        // geocodeリクエスト
+        geocoder.geocode ({
+          latLng: lat_lng
+        }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0].geometry) {
+              var address = results[0].formatted_address.replace('日本、', '');
+
+              document.getElementById('address').textContent = address;
+            }
+          } else {
+            alert("住所取得エラー status:" + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5wLMSZ2YQqMcWkWTlaA6eSifxBAnNUa4&callback=initMap">
+    </script>
+  </body>
+</html>
