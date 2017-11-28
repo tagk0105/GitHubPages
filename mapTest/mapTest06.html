@@ -24,9 +24,17 @@
       <li>Address: <span id="address"></span></li>
     </ul>
     <form method="post" action="http://192.168.100.218:7070/placeinsert">
-    	<input type="text" name="place_name" id="place_name"/>
-    	<input type="text" name="latitude" id="latitude"/>
-    	<input type="text" name="longitude" id="longitude"/>
+    	<table border="0">
+    		<tr>
+    			<td>緯度：</td><td><input type="text" name="latitude" id="latitude"/></td><td>経度：</td><td><input type="text" name="longitude" id="longitude"/></td>
+   			<tr>
+   			<tr>
+   				<td>名称：</td><td colspan="3"><input type="text" name="place_name" id="place_name"/></td>
+			</tr>
+   			<tr>
+   				<td colspan="4" style="text-align: center;"><input type="submit" value="サーバー登録"/></td>
+			</tr>
+    	</table>
     </form>
     <script>
       function initMap() {
