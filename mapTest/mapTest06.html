@@ -68,8 +68,8 @@
         document.getElementById('lat').textContent = lat_lng.lat();
         document.getElementById('lng').textContent = lat_lng.lng();
 
-        document.getElementById('latitude').textContent = lat_lng.lat();
-        document.getElementById('longitude').textContent = lat_lng.lng();
+        document.getElementById('latitude').value = lat_lng.lat();
+        document.getElementById('longitude').value = lat_lng.lng();
 
         // 座標の中心をずらす
         map.panTo(lat_lng);
@@ -88,7 +88,7 @@
               var address = results[0].formatted_address.replace('日本、', '');
 
               document.getElementById('address').textContent = address;
-              document.getElementById('place_name').textContent = address;
+              document.getElementById('place_name').value = address;
             }
           } else {
             alert("住所取得エラー status:" + status);
