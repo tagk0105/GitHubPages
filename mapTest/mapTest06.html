@@ -15,6 +15,24 @@
         padding: 0;
       }
     </style>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+	    $('#submitButton').click(function(){
+
+	    	// submit action
+	    	$.ajax({
+	    		url: 'http://192.168.100.218:7070/placeinsert',
+	    	}).done(function(data) {
+	    		alert('action complete! data:' + data);
+	    		location.reload(true);
+	    	}).fail(function(data) {
+	    		alert('action Error!!');
+	    	})
+	  	});
+});
+
+    </script>
   </head>
   <body>
     <div id="map"></div>
@@ -32,7 +50,10 @@
    				<td>名称：</td><td colspan="3"><input type="text" name="place_name" id="place_name"/></td>
 			</tr>
    			<tr>
+   			<!-- 
    				<td colspan="4" style="text-align: center;"><input type="submit" value="サーバー登録"/></td>
+ -->
+   				<td colspan="4" style="text-align: center;"><input type="button" id="submitButton" value="サーバー登録"/></td>
 			</tr>
     	</table>
     </form>
