@@ -4,76 +4,142 @@
     <title>K's Logic</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<script type="text/javascript" charset="utf8" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="js/jquery.prmenu.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="js/starscroll.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/kslogic.css"/>
-	<link rel="stylesheet" type="text/css" href="css/prmenu.css"/>
+	<style>
+		#menu {
+#			width: 466px;
+			width: 666px;
+#			background: #f3f3f3;
+			margin-left: auto;
+		}
+		#menu div {
+			display: inline-block;
+			position: relative;
+		}
+		
+		#menu span {
+			display: block;
+#			width: 80px;
+			width: 120px;
+			padding: 10px 16px;
+			cursor: pointer;
+		}
+		
+		#menu ul {
+			display: none;
+			position: absolute;
+			top: 30px;
+#			width: 80px;
+			width: 120px;
+			padding: 5px 16px;
+#			background: #f3f3f3;
+			list-style: none;
+		}
+		
+		#menu li {
+			padding: 2px 0;
+		}
+		
+		#menu a {
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		#menu a:hover {
+			background-color: blue;
+			text-shadow:-1px -2px 3px #FFFFFF;
+		}
+	</style>
+	<script>
+		$(function () {
+			$('span').click(function() {
+				if ($(this).attr('class') == 'selected') {
+					// メニュー非表示
+					$(this).removeClass('selected').next('ul').slideUp('fast');
+				} else {
+					// 表示しているメニューを閉じる
+					$('span').removeClass('selected');
+					$('ul').hide();
+					
+					// メニュー表示
+					$(this).addClass('selected').next('ul').slideDown('fast');
+				}
+			});
+			// マウスカーソルがメニュー上/メニュー外
+			$('span,ul').hover(function() {
+				over_flg = true;
+			}, function () {
+				over_flg = false;
+			});
+			
+			// メニュー領域外をクリックしたらメニューを閉じる
+			$('body').click(function() {
+				if (over_flg == false) {
+					$('span').removeClass('selected');
+					$('ul').slideUp('fast');
+				}
+			});
+		});
+	</script>
 </head>
 <body>
+<div id="starfield"></div>
 	<div id="header-fixed">
 		<div id="header-bk">
-			<div id="header"><img src="images/rogoDesign.png"/>
-<!--
-	<ul id="top-menu">
-		<li><a href="#">メニュー①</a></li>
-		<li><a href="#">メニュー②</a>
-			<ul>
-				<li><a href="#">アイテム</a></li>
-				<li><a href="#">アイテム</a>
-			<ul>
-				<li><a href="#">サブアイテム</a></li>
-				<li><a href="#">サブアイテム</a></li>
-				<li><a href="#">サブアイテム</a></li>
-			</ul>
-		</li>
-		<li><a href="#">アイテム</a></li>
-	</ul>
-	</li>
-	<li><a href="#">メニュー③</a></li>
-	<li><a href="#">メニュー④</a>
-		<ul>
-			<li><a href="#">アイテム</a></li>
-			<li><a href="#">アイテム</a>
-		<ul>
-			<li><a href="#">サブアイテム</a></li>
-			<li><a href="#">サブアイテム</a></li>
-			<li><a href="#">サブアイテム</a></li>
-		</ul>
-	</li>
-	<li><a href="#">アイテム</a></li>
-	</ul>
-	</li>
-	<li><a href="#">アイテム</a></li>
-</ul>
- -->
+			<div id="header">
+				<div id="menu">
+					<div>
+						<span>BLOG</span>
+							<ul>
+								<li><a href="https://kslogic-blog.blogspot.jp/">Official BLOG</a></li>
+							</ul>
+					</div>
+					<div>
+						<span>MENU-2</span>
+							<ul>
+								<li><a href="#">MENU 2-1</a></li>
+								<li><a href="#">MENU 2-2</a></li>
+							</ul>
+					</div>
+					<div>
+						<span>MENU-3</span>
+							<ul>
+								<li><a href="#">MENU 3-1</a></li>
+							</ul>
+					</div>
+					<div>
+						<span>Project:mapTest</span>
+							<ul>
+								<li><a href="mapTest/mapTest01.html">mapTest01</a></li>
+								<li><a href="mapTest/mapTest02.html">mapTest02</a></li>
+								<li><a href="mapTest/mapTest03.html">mapTest03</a></li>
+								<li><a href="mapTest/mapTest04.html">mapTest04</a></li>
+								<li><a href="mapTest/mapTest05.html">mapTest05</a></li>
+								<li><a href="mapTest/mapTest06.html">mapTest06</a></li>
+							</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div id="body-bk">
 		<div id="body">
-      <p>K's Logic.inc テストページです。</p><p><br></p><p><br></p>
-      <p>Project:mapTest
-        <ul>
-          <li><a href="mapTest01.html">mapTest01</a></li>
-          <li><a href="mapTest02.html">mapTest02</a></li>
-          <li><a href="mapTest03.html">mapTest03</a></li>
-          <li><a href="mapTest04.html">mapTest04</a></li>
-          <li><a href="mapTest05.html">mapTest05</a></li>
-          <li><a href="mapTest/mapTest06.html">mapTest06</a></li>
-        </ul>
-        </p>
+      <p>K's Logic テストページです。</p><p><br></p><p><br></p>
     </div>
 	</div>
 	<div id="footer-fixed">
 		<div id="footer-bk">
 			<div id="footer">
-				<p style="font-size: 8pt; color: #050505;">Copyright &copy; 2017 Ks_logic All Rights Reserved.</p>
+				<p>Copyright &copy; 2015Aug- Ks_logic ( Katsumi TAGUCHI ) All Rights Reserved.</p>
 			</div>
 		</div>
 	</div>
-	<script>
-	$(document).ready(function() {
-//s		$('#top-menu').prmenu();
-	});
-	</script>
+<script type="text/javascript">
+$(function() {
+	$('#starfield').html('').starscroll(16,1,50,3,4,[96, 255, 255],true,true,12);
+});
+</script>
 </body>
 </html>
