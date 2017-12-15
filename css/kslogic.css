@@ -70,3 +70,44 @@ div#footer {
 	font-size: 8pt;
 	color: #a0a0a0;
 }
+
+/* ÉÅÉjÉÖÅ[ä÷òA */
+#menu {
+	width: 666px;
+	margin-left: auto;
+}
+#menu div {
+	display: inline-block;
+	position: relative;
+}
+		
+#menu span {
+	display: block;
+	width: 120px;
+	padding: 10px 16px;
+	cursor: pointer;
+}
+
+#menu ul {
+	display: none;
+	position: absolute;
+	top: 30px;
+	width: 120px;
+	padding: 5px 16px;
+	list-style: none;
+}
+
+#menu li {
+	padding: 2px 0;
+}
+
+#menu a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	background-color: blue;
+	text-shadow:-1px -2px 3px #FFFFFF;
+}
