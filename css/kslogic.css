@@ -4,7 +4,8 @@ html, body {
 	padding: 0; /* 余白なし */
 	width: 100%;
 	height: 100%;
-	font:13px/1 "メイリオ","Meiryo","ＭＳ Ｐゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
+	font:"メイリオ","Meiryo","ＭＳ Ｐゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
+	font-size: 14px;
 	color: #a0a0a0;
 }
 
@@ -14,32 +15,57 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	-webkit-text-size-adjust: 100%;
 }
 
-/* ヘッダー固定 */
 div#header-fixed {
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 60px;
+/*	border: 1px solid yellow;*/
 }
 
 div#header-bk {
-	padding: 5px 0 10px; 	/* 上10px、下10px あける */
+	padding: 5px 0 10px;
 	height: 50px;
 	width: 100%;
+/*	border: 1px solid pink;*/
 }
 
 div#header {
 	height: 100%;
 	width: 960px;
 	margin: auto;
+/*	border: 1px solid white;*/
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.title {
+    font-size: 40px;
+    font-family: 'Teko', sans-serif;
 }
 
-/* ボディ定義 */
+div#myname {
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+div#occupation {
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+/*    color: #778899;*/
+    color: #AFEEEE;
+}
 div#body-bk {
-	padding: 80px 0 50px 0; 	/* 上下160px余白を取る */
+	padding: 80px 10px 0; 
 }
 
 div#body {
@@ -47,7 +73,6 @@ div#body {
 	margin: auto;
 }
 
-/* フッター固定 */
 div#footer-fixed {
 	position: fixed;
 	bottom: 0px;
@@ -57,11 +82,9 @@ div#footer-fixed {
 }
 
 div#footer-bk {
-	padding: 10px 0 20px; 	/* 上10px、下20px あける */
-	height: 20px;
+	height: 28px;
 	width: 100%;
 }
-
 div#footer {
 	height: 100%;
 	width: 960px;
@@ -71,43 +94,36 @@ div#footer {
 	color: #a0a0a0;
 }
 
-/* メニュー関連 */
-#menu {
-	width: 666px;
-	margin-left: auto;
-}
-#menu div {
-	display: inline-block;
-	position: relative;
-}
-		
-#menu span {
-	display: block;
-	width: 120px;
-	padding: 10px 16px;
-	cursor: pointer;
-}
-
-#menu ul {
-	display: none;
-	position: absolute;
-	top: 30px;
-	width: 120px;
-	padding: 5px 16px;
-	list-style: none;
-}
-
-#menu li {
-	padding: 2px 0;
-}
-
-#menu a {
-	color: white;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-#menu a:hover {
-	background-color: blue;
-	text-shadow:-1px -2px 3px #FFFFFF;
+/* ウィンドウ幅が0～479pxの場合に適用するCSS */
+@media screen and ( max-width:479px )
+{
+	p
+	{
+		font-size: 16px ;	/* 16px */
+		line-height: 1.5em;
+	}
+	div#header {
+		height: 100%;
+		margin: auto;
+	}
+	div#body {
+		width: 100%;
+		margin: auto;
+	}
+	div#footer {
+		height: 100%;
+		margin: auto;
+		text-align: left;
+		font-size: 8pt;
+		color: #a0a0a0;
+	}
+	.title {
+	    color: #AFEEEE;
+	}
+	div#myname {
+	    font-size: 40px;
+	}
+	div#occupation {
+	    font-size: 20px;
+	}
 }

@@ -2,91 +2,40 @@
 <html>
 <head>
     <title>K's Logic</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<script type="text/javascript" charset="utf8" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="js/starscroll.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/kslogic.css"/>
-	<script>
-		$(function () {
-			$('span').click(function() {
-				if ($(this).attr('class') == 'selected') {
-					// メニュー非表示
-					$(this).removeClass('selected').next('ul').slideUp('fast');
-				} else {
-					// 表示しているメニューを閉じる
-					$('span').removeClass('selected');
-					$('ul').hide();
-					
-					// メニュー表示
-					$(this).addClass('selected').next('ul').slideDown('fast');
-				}
-			});
-			// マウスカーソルがメニュー上/メニュー外
-			$('span,ul').hover(function() {
-				over_flg = true;
-			}, function () {
-				over_flg = false;
-			});
-			
-			// メニュー領域外をクリックしたらメニューを閉じる
-			$('body').click(function() {
-				if (over_flg == false) {
-					$('span').removeClass('selected');
-					$('ul').slideUp('fast');
-				}
-			});
-		});
-	</script>
+	<link href='http://fonts.googleapis.com/css?family=Teko:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="starfield"></div>
 	<div id="header-fixed">
 		<div id="header-bk">
 			<div id="header">
-				<div id="menu">
-					<div>
-						<span>BLOG</span>
-							<ul>
-								<li><a href="https://kslogic-blog.blogspot.jp/">Official BLOG</a></li>
-							</ul>
-					</div>
-					<div>
-						<span>MENU-2</span>
-							<ul>
-								<li><a href="#">MENU 2-1</a></li>
-								<li><a href="#">MENU 2-2</a></li>
-							</ul>
-					</div>
-					<div>
-						<span>MENU-3</span>
-							<ul>
-								<li><a href="index2.html">別Ver</a></li>
-							</ul>
-					</div>
-					<div>
-						<span>Project:mapTest</span>
-							<ul>
-								<li><a href="mapTest/mapTest01.html">mapTest01</a></li>
-								<li><a href="mapTest/mapTest02.html">mapTest02</a></li>
-								<li><a href="mapTest/mapTest03.html">mapTest03</a></li>
-								<li><a href="mapTest/mapTest04.html">mapTest04</a></li>
-								<li><a href="mapTest/mapTest05.html">mapTest05</a></li>
-								<li><a href="mapTest/mapTest06.html">mapTest06</a></li>
-							</ul>
-					</div>
-				</div>
+				<table style="width: 100%;">
+					<tr>
+						<td class="title" style="width: 50%;">K's Logic</td>
+						<td style="width: 30%;"><a href="https://kslogic-blog.blogspot.jp/">BLOG</a></td>
+						<td style="width: 20%; text-align: right;"><a href="time.html">HISORY</a></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
 	<div id="body-bk">
 		<div id="body">
-      <p>K's Logic テストページです。</p><p><br></p><p><br></p>
+      <p></p><p><br></p><p><br></p>
+      		<div id="myname">Katsumi Taguchi</div>
+      		<div id="occupation">Software engineer</div>
     </div>
 	</div>
 	<div id="footer-fixed">
 		<div id="footer-bk">
 			<div id="footer">
-				<p>Copyright &copy; 2015Aug- Ks_logic ( Katsumi TAGUCHI ) All Rights Reserved.</p>
+				Copyright &copy; 2015Aug- Ks_logic ( Katsumi TAGUCHI ) All Rights Reserved.
 			</div>
 		</div>
 	</div>
