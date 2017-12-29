@@ -7,8 +7,11 @@
  	<script type="text/javascript" charset="utf8" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="js/starscroll.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="js/jquery.timelinr-0.9.6.js"></script>
+	<script type="text/javascript" charset="utf8" src="js/jquery.slicknav.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="css/kslogic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/slicknav.css"/>
 	
 	<link href='http://fonts.googleapis.com/css?family=Teko:300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
@@ -20,22 +23,114 @@
 				arrowKeys: 'true'
 		    });
 
-			$('#top-menu').prmenu();
+			$('#menu').slicknav();
 		});
 	</script>
+	<style>
+#navi {
+  position: relative;
+  margin: 1em 0;
+  height: 20px;
+}
+#menu {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#menu li {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+#menu li a {
+  padding: 0 20px 10px;
+  border-top: none;
+  border-right: none;
+  background: none;
+  color: #555555;
+  display: inline-block;
+  margin: auto;
+  text-shadow: -1px 1px rgba(255, 255, 255, 0.8);
+}
+#menu li a:hover {
+  background: none;
+  color: #97C1F3;
+}
+#menu li a:active {
+  color: #5687F8;
+}
+#menu {
+  display: block;
+}
+	  .slicknav_menu {
+	    display: none;
+	  }
+/* ウィンドウ幅が0〜479pxの場合に適用するCSS */
+@media screen and ( max-width:479px )
+{
+	#menu {
+	    display: none;
+	  }
+}
+	</style>
 </head>
 <body>
 <div id="starfield"></div>
 	<div id="header-fixed">
 		<div id="header-bk">
 			<div id="header">
-				<table style="width: 100%;">
-					<tr>
-						<td class="title" style="width: 30%;"><a href="index.html" id="title">K's Logic</a></td>
-						<td class="history" style="width: 30%; text-align: right;"><a href="time.html"><img src="images/history.png" width="40" height="40" title="HISTORY"></a></td>
-						<td style="width: 40%; text-align: right;"><a href="https://kslogic-blog.blogspot.jp/"><img src="images/blog.png" width="40" height="40" title="BLOG"></a></td>
-					</tr>
-				</table>
+<span class="title">K's Logic</span>
+<div id="navi">
+	<ul id="menu" class="clearfix">
+		<li><a href="#">メニュー</a></li>
+		<li><a href="#">メニュー②</a></li>
+		<li><a href="#">アイテム</a></li>
+		<li><a href="#">アイテム</a></li>
+	</ul>
+	</div>
+<!-- 
+			<table>
+				<tr>
+					<td><span class="title">K's Logic</span></td>
+					<td>
+			
+	<ul id="top-menu">
+		<li><a href="#">メニュー</a></li>
+		<li><a href="#">メニュー②</a>
+			<ul>
+				<li><a href="#">アイテム</a></li>
+				<li><a href="#">アイテム</a>
+			<ul>
+				<li><a href="#">サブアイテム</a></li>
+				<li><a href="#">サブアイテム</a></li>
+				<li><a href="#">サブアイテム</a></li>
+			</ul>
+		</li>
+		<li><a href="#">アイテム</a></li>
+	</ul>
+	</li>
+	<li><a href="#">メニュー③</a>
+		<ul>
+			<li><a href="#">アイテム</a></li>
+			<li><a href="#">アイテム</a>
+		<ul>
+			<li><a href="#">サブアイテム</a></li>
+			<li><a href="#">サブアイテム</a></li>
+			<li><a href="#">サブアイテム</a></li>
+		</ul>
+	</li>
+	<li><a href="#">アイテム</a></li>
+	</ul>
+	</li>
+	<li><a href="#">アイテム</a></li>
+</ul>
+
+
+					</td>
+				</tr>
+			</table>
+ -->						
 			</div>
 		</div>
 	</div>
