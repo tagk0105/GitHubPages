@@ -1,9 +1,5 @@
 @charset "UTF-8";
 /* -------------------------------------
- * For horizontal version, set the
- * $vertical variable to false
- * ------------------------------------- */
-/* -------------------------------------
  * General Style
  * ------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
@@ -11,8 +7,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 5%;
-  font-size: 100%;
-  background: #48b379;
     font:"メイリオ","Meiryo","ＭＳ Ｐゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
     font-size: 14px;
     color: #a0a0a0;
