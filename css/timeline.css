@@ -12,9 +12,16 @@ body {
   margin: 0 auto;
   padding: 0 5%;
   font-size: 100%;
-  font-family: "Noto Sans", sans-serif;
-  color: #eee9dc;
   background: #48b379;
+    font:"メイリオ","Meiryo","ＭＳ Ｐゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
+    font-size: 14px;
+    color: #a0a0a0;
+    background-color: #001A43;
+    background-image: url("../images/KsLogic_Bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-text-size-adjust: 100%;
 }
 
 h2 {
@@ -56,7 +63,7 @@ h2 {
   left: -44px;
   width: 10px;
   height: 10px;
-  background: #48b379;
+  background: #001A43;
   border: 5px solid #eee9dc;
   border-radius: 50%;
   display: block;
@@ -88,7 +95,7 @@ h2 {
   margin-top: -20px;
 }
 .content:after {
-  border-right-color: #48b379;
+  border-right-color: #001A43;
   border-width: 17px;
   top: 50%;
   margin-top: -17px;
