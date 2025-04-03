@@ -2,11 +2,18 @@
   "name": "PWA Test",
   "short_name": "PWA",
   "background_color": "#000000",
-  "icons": [{
+  "icons": [
+    {
       "src": "/pwa_test/images/icon.png",
       "sizes": "256x256",
       "type": "image/png"
-    }],
+    },
+    {
+      "src": "/pwa_test/images/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "start_url": "/pwa_test/",
   "scope": "/pwa_test/",
   "display": "standalone"
