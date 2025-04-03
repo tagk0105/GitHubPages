@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register ('/pwa_test/service-worker.js')
+        }
+    </script>
+    <title>PWA test</title>
+</head>
+<body>
+    <h1>ToDo リスト</h1>
+
+    <form id="addTaskForm">
+        <label for="taskName">タスク名:</label>
+        <input type="text" id="taskName" required>
+        <button type="submit">追加</button>
+    </form>
+
+    <ul id="taskList">
+        </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
